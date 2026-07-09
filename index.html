@@ -7,7 +7,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="민현이의 첫 생일에 초대합니다">
 <meta property="og:description" content="2026년 8월 8일 토요일 저녁 6시 · 라페스타 6층">
-<meta property="og:image" content="preview.jpg">
+<meta property="og:image" content="preview_v2.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -45,7 +45,7 @@
   .photo-wrap{padding:38px 30px 20px;text-align:center;}
   .photo{width:210px;height:260px;margin:0 auto;border-radius:120px 120px 14px 14px;
     background:linear-gradient(160deg,var(--blue-mist),#cfd9e8);display:flex;align-items:center;justify-content:center;
-    border:3px solid var(--white);box-shadow:0 10px 26px rgba(27,42,74,.22), 0 0 0 2px var(--gold);overflow:hidden;position:relative;}
+    border:3px solid var(--white);box-shadow:0 10px 26px rgba(27,42,74,.22), 0 0 0 2px var(--gold);overflow:hidden;position:relative;cursor:pointer;}
   .photo img{width:100%;height:100%;object-fit:cover;display:block;}
   .baby-info{margin-top:22px;}
   .baby-info .kname{font-size:26px;font-weight:800;color:var(--ink);letter-spacing:.05em;}
@@ -53,21 +53,28 @@
   .baby-info .birth{margin-top:10px;font-size:14px;color:#6a6553;}
   .greeting{padding:34px 34px 40px;text-align:center;font-size:15.5px;line-height:2.05;color:#4a4636;}
   .greeting .em{color:var(--blue);font-weight:700;}
-  .story-h{text-align:center;font-size:15px;letter-spacing:.35em;color:var(--blue);margin-bottom:22px;padding-left:.35em;}
-  .story{padding:8px 24px 34px;}
-  .story-item{display:flex;align-items:center;gap:16px;margin-bottom:22px;}
-  .story-item.rev{flex-direction:row-reverse;}
-  .story-photo{flex:0 0 132px;height:168px;border-radius:14px;overflow:hidden;border:3px solid var(--white);
-    box-shadow:0 8px 18px rgba(27,42,74,.2), 0 0 0 1.5px var(--gold);}
-  .story-photo img{width:100%;height:100%;object-fit:cover;display:block;}
-  .story-txt .stt{display:inline-block;font-size:12px;letter-spacing:.15em;color:var(--white);
-    background:linear-gradient(160deg,var(--blue-soft),var(--blue));padding:4px 12px;border-radius:20px;margin-bottom:8px;}
-  .story-txt .stv{font-size:14.5px;line-height:1.7;color:#4a4636;font-weight:700;}
-  .gallery{padding:8px 24px 36px;}
-  .gallery .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-  .gallery .cell{aspect-ratio:1/1;border-radius:12px;overflow:hidden;border:2px solid var(--white);box-shadow:0 5px 14px rgba(27,42,74,.14);}
-  .gallery .cell img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s;}
-  .gallery .cell:active img{transform:scale(1.06);}
+  .story-h{text-align:center;font-size:15px;letter-spacing:.35em;color:var(--blue);margin-bottom:6px;padding-left:.35em;}
+  .story-sub{text-align:center;font-size:12.5px;color:#8a8672;margin-bottom:26px;letter-spacing:.05em;}
+  .story{padding:8px 24px 30px;}
+  .chapter{margin-bottom:30px;}
+  .ch-head{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+  .ch-no{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:linear-gradient(160deg,var(--blue-soft),var(--blue));
+    color:var(--white);font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 7px rgba(47,93,158,.3);}
+  .ch-title{font-size:16px;font-weight:800;color:var(--ink);}
+  .ch-title small{display:block;font-weight:400;font-size:12.5px;color:#8a8672;margin-top:2px;letter-spacing:.02em;}
+  .ph{border-radius:12px;overflow:hidden;border:2px solid var(--white);box-shadow:0 6px 16px rgba(27,42,74,.16), 0 0 0 1px var(--gold);cursor:pointer;background:#dfe6f0;}
+  .ph img{width:100%;height:100%;object-fit:cover;display:block;}
+  .st1{display:flex;justify-content:center;}
+  .st1 .ph{width:80%;aspect-ratio:4/3;}
+  .st2{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .st2 .ph{aspect-ratio:3/4;}
+  .st3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;}
+  .st3 .ph{aspect-ratio:3/4;}
+  .gallery{padding:8px 20px 36px;}
+  .masonry{column-count:2;column-gap:10px;}
+  .masonry .m{break-inside:avoid;margin-bottom:10px;border-radius:12px;overflow:hidden;border:2px solid var(--white);
+    box-shadow:0 5px 14px rgba(27,42,74,.14);cursor:pointer;background:#dfe6f0;}
+  .masonry .m img{width:100%;display:block;}
   .details{padding:6px 24px 36px;}
   .dcard{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:26px 24px;box-shadow:0 6px 18px rgba(27,42,74,.08);}
   .drow{display:flex;align-items:flex-start;gap:14px;padding:14px 0;}
@@ -102,6 +109,13 @@
   .foot .sign span{color:var(--blue);}
   @keyframes floatUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
   .reveal{animation:floatUp .8s ease both;}
+  /* 라이트박스 */
+  #lb{position:fixed;inset:0;background:rgba(14,19,33,.93);display:none;align-items:center;justify-content:center;
+    z-index:999;padding:16px;opacity:0;transition:opacity .2s;}
+  #lb.open{display:flex;opacity:1;}
+  #lb img{max-width:100%;max-height:100%;border-radius:8px;box-shadow:0 12px 46px rgba(0,0,0,.55);}
+  #lb .x{position:absolute;top:14px;right:18px;color:#fff;font-size:34px;line-height:1;font-family:sans-serif;opacity:.85;}
+  #lb .hint{position:absolute;bottom:20px;left:0;right:0;text-align:center;color:rgba(255,255,255,.6);font-size:12px;letter-spacing:.1em;}
 </style>
 </head>
 <body>
@@ -115,7 +129,7 @@
   </section>
   <div class="band"></div>
   <section class="photo-wrap reveal">
-    <div class="photo"><img src="baby.jpg" alt="민현이 사진"></div>
+    <div class="photo zoomable"><img src="main.jpg" alt="민현이 사진"></div>
     <div class="baby-info">
       <div class="kname">김 민 현</div>
       <div class="hname">우리 집 첫 번째 보물</div>
@@ -130,26 +144,52 @@
     귀한 걸음으로 축복해 주시면<br>
     더없는 기쁨으로 간직하겠습니다.
   </section>
+
   <section class="story reveal">
     <h3 class="story-h">민현이의 열두 달</h3>
-    <div class="story-item">
-      <div class="story-photo"><img src="birth.jpg" alt="출산 사진" loading="lazy"></div>
-      <div class="story-txt"><div class="stt">첫 만남</div><div class="stv">2025년 8월 18일,<br>세상에 안녕 인사를 건넨 날</div></div>
+    <div class="story-sub">하루하루 자라온 순간들</div>
+
+    <div class="chapter">
+      <div class="ch-head"><div class="ch-no">1</div><div class="ch-title">첫 만남<small>2025. 08. 18 · 세상에 안녕</small></div></div>
+      <div class="st1">
+        <div class="ph zoomable"><img src="birth_v2.jpg" alt="첫 만남" loading="lazy"></div>
+      </div>
     </div>
-    <div class="story-item rev">
-      <div class="story-photo"><img src="twoweeks.jpg" alt="생후 2주" loading="lazy"></div>
-      <div class="story-txt"><div class="stt">생후 2주</div><div class="stv">벌써 표정 부자가 되어<br>온 가족을 웃게 만든 날 😆</div></div>
+
+    <div class="chapter">
+      <div class="ch-head"><div class="ch-no">2</div><div class="ch-title">생후 2주<small>어느새 표정 부자가 되어 😆</small></div></div>
+      <div class="st2">
+        <div class="ph zoomable"><img src="w2_1.jpg" alt="생후 2주" loading="lazy"></div>
+        <div class="ph zoomable"><img src="w2_2.jpg" alt="생후 2주" loading="lazy"></div>
+      </div>
+    </div>
+
+    <div class="chapter">
+      <div class="ch-head"><div class="ch-no">3</div><div class="ch-title">백일<small>포동포동, 무럭무럭 자란 100일</small></div></div>
+      <div class="st3">
+        <div class="ph zoomable"><img src="d100_1.jpg" alt="백일" loading="lazy"></div>
+        <div class="ph zoomable"><img src="d100_2.jpg" alt="백일" loading="lazy"></div>
+        <div class="ph zoomable"><img src="d100_3.jpg" alt="백일" loading="lazy"></div>
+      </div>
     </div>
   </section>
+
   <section class="gallery reveal">
     <h3 class="story-h">우리들의 순간</h3>
-    <div class="grid">
-      <div class="cell"><img src="gallery1.jpg" alt="사진" loading="lazy"></div>
-      <div class="cell"><img src="gallery2.jpg" alt="사진" loading="lazy"></div>
-      <div class="cell"><img src="gallery3.jpg" alt="사진" loading="lazy"></div>
-      <div class="cell"><img src="gallery4.jpg" alt="사진" loading="lazy"></div>
+    <div class="story-sub">사진을 누르면 크게 볼 수 있어요</div>
+    <div class="masonry">
+      <div class="m zoomable"><img src="g1.jpg" alt="사진" loading="lazy"></div>
+      <div class="m zoomable"><img src="g5.jpg" alt="사진" loading="lazy"></div>
+      <div class="m zoomable"><img src="g2.jpg" alt="사진" loading="lazy"></div>
+      <div class="m zoomable"><img src="g4.jpg" alt="사진" loading="lazy"></div>
+      <div class="m zoomable"><img src="g6.jpg" alt="사진" loading="lazy"></div>
+      <div class="m zoomable"><img src="g3.jpg" alt="사진" loading="lazy"></div>
+      <div class="m zoomable"><img src="g8.jpg" alt="사진" loading="lazy"></div>
+      <div class="m zoomable"><img src="g7.jpg" alt="사진" loading="lazy"></div>
+      <div class="m zoomable"><img src="g9.jpg" alt="사진" loading="lazy"></div>
     </div>
   </section>
+
   <section class="details reveal">
     <div class="dcard">
       <div class="drow"><div class="ic">📅</div><div class="txt"><div class="t">D A T E</div><div class="v">2026년 8월 8일 토요일<small>저녁 6시</small></div></div></div>
@@ -177,6 +217,10 @@
     <div class="sign">아빠 <span>김익균</span> · 엄마 <span>손지은</span></div>
   </section>
 </div>
+
+<!-- 라이트박스 -->
+<div id="lb"><span class="x">&times;</span><img id="lbimg" src="" alt="확대 이미지"><div class="hint">화면을 누르면 닫혀요</div></div>
+
 <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
 <script>
 (function(){
@@ -187,7 +231,7 @@
   }
   window.addEventListener('load', renderKakaoMap);
 
-  // D-day 계산 (돌잔치: 2026년 8월 8일) — Date(연, 월(0부터), 일)
+  // D-day (돌잔치: 2026년 8월 8일)
   var ev = new Date(2026, 7, 8);
   var today = new Date(); today.setHours(0,0,0,0);
   var diff = Math.round((ev.getTime() - today.getTime()) / 86400000);
@@ -197,6 +241,19 @@
     else if (diff === 0) el.innerHTML = '<span>D-DAY</span> 🎉';
     else                 el.innerHTML = '<span>고맙습니다</span> ♥';
   }
+
+  // 라이트박스: 사진 클릭 시 확대
+  var lb = document.getElementById('lb');
+  var lbimg = document.getElementById('lbimg');
+  document.addEventListener('click', function(e){
+    var z = e.target.closest('.zoomable');
+    if (z){
+      var img = z.querySelector('img');
+      if (img){ lbimg.src = img.getAttribute('src'); lb.classList.add('open'); document.body.style.overflow='hidden'; }
+      return;
+    }
+    if (e.target.closest('#lb')){ lb.classList.remove('open'); lbimg.src=''; document.body.style.overflow=''; }
+  });
 })();
 </script>
 </body>
